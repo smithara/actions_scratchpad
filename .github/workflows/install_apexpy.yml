@@ -29,7 +29,7 @@ jobs:
       if: runner.os == 'Windows'
       run: |
         python -m pip install numpy
-        python -m pip install --no-use-pep517 apexpy
+        python -m pip install git+https://github.com/aburrell/apexpy.git@reorg_w_meson
 
     - name: Test apexpy
       run: python -c "import apexpy"
