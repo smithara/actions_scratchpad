@@ -30,5 +30,6 @@ dependencies:
     - geopack  # from pyspedas
     - hapiclient
     - hapiplot
+    - pyspedas==1.4.4
     - pytplot-mpl-temp  # from pyspedas; provides pytplot package!
     - viresclient  # (also from pyspedas, though it is not used by pyspedas!)
