@@ -1,18 +1,18 @@
-name: pyhc-latest
+name: pyhc-gallery
 channels:
   - conda-forge
 dependencies:
+  - python=3.10
+  - pip
+  - jupyter-book=0.13.1
   - aiapy
   - astropy
   - cdflib
-  - jupyter-book
   - matplotlib
   - netcdf4
   - numpy
   - pandas
-  - pip
   - plasmapy
-  - python
   - scipy
   - sunpy
   - watermark
