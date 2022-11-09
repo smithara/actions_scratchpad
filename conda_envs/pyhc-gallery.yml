@@ -17,7 +17,7 @@ dependencies:
   - pywavelets  # from pyspedas
   - scipy
   - sunpy
-  - viresclient  # (also from pyspedas, though it is not used by pyspedas!)
+  
   - watermark
   - xarray
   - pip:
@@ -26,3 +26,4 @@ dependencies:
     - hapiclient
     - hapiplot
     - pytplot-mpl-temp  # from pyspedas; provides pytplot package!
+    - viresclient  # (also from pyspedas, though it is not used by pyspedas!)
