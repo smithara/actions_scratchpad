@@ -1,0 +1,23 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  install-latest-env:
+    runs-on: ubuntu-latest
+      defaults:
+        run:
+          shell: bash -l {0}
+      steps:
+        - uses: actions/checkout@v2
+        - name: Provision conda env: pyhc-gallery-latest
+          uses: conda-incubator/setup-miniconda@v2
+          with:
+            activate-environment: pyhc-gallery-latest
+            environment-file: conda_envs/pyhc-gallery.yml
+        - name: Display environment
+          run: |
+            conda info
+            conda list
+        - name: conda list --explicit
+          run: |
+            conda list --explicit
