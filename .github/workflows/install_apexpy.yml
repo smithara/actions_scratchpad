@@ -11,7 +11,7 @@ jobs:
       matrix:
         runs-on: [windows-latest]
         python-version: ["3.8"]
-    
+
     steps:
 
     - name: Setup gfortran (Windows)
@@ -24,7 +24,7 @@ jobs:
     - uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    
+
     - name: Install apexpy (Windows)
       if: runner.os == 'Windows'
       run: |
