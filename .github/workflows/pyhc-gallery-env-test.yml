@@ -21,3 +21,22 @@ jobs:
       - name: conda list --explicit
         run: |
           conda list --explicit
+  install-explicit-env:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}  # needed for conda to work right
+    steps:
+      - uses: actions/checkout@v2
+      - name: Provision conda env
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          activate-environment: pyhc-gallery-explicit
+          environment-file: conda_envs/pyhc-gallery-fixed-conda.txt
+      - name: Add pip packages
+        run: |
+          pip install -r conda_envs/pyhc-gallery-fixed-pip.txt
+      - name:  Display environment
+        run: |
+          conda info
+          conda list
