@@ -17,9 +17,14 @@ dependencies:
   - pywavelets  # from pyspedas
   - scipy
   - sunpy
-  
   - watermark
   - xarray
+  # misc dependencies from pip packages below
+  #  (source the install from conda-forge instead where possible)
+  - bokeh
+  - joblib
+  - numexpr
+  - pytables  # ("tables" in pypi)
   - pip:
     - cdasws  # from pyspedas
     - geopack  # from pyspedas
