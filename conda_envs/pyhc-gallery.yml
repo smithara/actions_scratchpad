@@ -21,7 +21,7 @@ dependencies:
   - xarray
   # misc dependencies from pip packages below
   #  (source the install from conda-forge instead where possible)
-  - bokeh
+  - bokeh=2.4.3  # (pytplot-mpl-temp requires < 3)
   - joblib
   - numexpr
   - pytables  # ("tables" in pypi)
