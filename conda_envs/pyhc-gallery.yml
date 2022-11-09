@@ -5,18 +5,24 @@ dependencies:
   - python=3.10
   - pip
   - jupyter-book=0.13.1
+  # Gallery dependencies:
   - aiapy
   - astropy
-  - cdflib
+  - cdflib=0.4.7  # 0.4.8 reports as v0.0.0
   - matplotlib
   - netcdf4
   - numpy
   - pandas
   - plasmapy
+  - pywavelets  # from pyspedas
   - scipy
   - sunpy
+  - viresclient  # (also from pyspedas, though it is not used by pyspedas!)
   - watermark
   - xarray
   - pip:
+    - cdasws  # from pyspedas
+    - geopack  # from pyspedas
     - hapiclient
     - hapiplot
+    - pytplot-mpl-temp  # from pyspedas; provides pytplot package!
