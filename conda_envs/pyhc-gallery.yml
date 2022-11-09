@@ -20,5 +20,3 @@ dependencies:
   - pip:
     - hapiclient
     - hapiplot
-    - pyspedas
-    - pytplot
