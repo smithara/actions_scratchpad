@@ -1,0 +1,24 @@
+name: pyhc-latest
+channels:
+  - conda-forge
+dependencies:
+  - aiapy
+  - astropy
+  - cdflib
+  - jupyter-book
+  - matplotlib
+  - netcdf4
+  - numpy
+  - pandas
+  - pip
+  - plasmapy
+  - python
+  - scipy
+  - sunpy
+  - watermark
+  - xarray
+  - pip:
+    - hapiclient
+    - hapiplot
+    - pyspedas
+    - pytplot
