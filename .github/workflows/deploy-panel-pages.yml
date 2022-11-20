@@ -14,6 +14,7 @@ jobs:
       - run: git clone https://github.com/smithara/swarm-handbook-experiment.git
       - run: jupyter nbconvert --to script swarm-handbook-experiment/json/json_creator.ipynb
       - run: panel convert swarm-handbook-experiment/json/json_creator.py --to pyodide-worker --out html/pyodide --index --requirements pandas markdown tabulate
+      - run: cp -r swarm-handbook-experiment/json/catalog html/pyodide/catalog
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
