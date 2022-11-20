@@ -11,8 +11,9 @@ jobs:
           python-version: '3.10'
       - run: pip install panel jupyter pandas markdown tabulate
       - run: git clone https://github.com/smithara/swarm-handbook-experiment.git
-      - run: panel convert swarm-handbook-experiment/json/json_creator.ipynb --to pyodide-worker --out pyodide --requirements pandas markdown tabulate
+      - run: mkdir html
+      - run: panel convert swarm-handbook-experiment/json/json_creator.ipynb --to pyodide-worker --out html/pyodide --index --requirements pandas markdown tabulate
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: pyodide
+          publish_dir: html
