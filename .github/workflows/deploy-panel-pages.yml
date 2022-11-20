@@ -12,7 +12,7 @@ jobs:
       - run: mkdir html
       - run: pip install jupyter nbconvert panel pandas markdown tabulate
       - run: git clone https://github.com/smithara/swarm-handbook-experiment.git
-      - run: juypyter nbconvert --to script swarm-handbook-experiment/json/json_creator.ipynb
+      - run: jupyter nbconvert --to script swarm-handbook-experiment/json/json_creator.ipynb
       - run: panel convert swarm-handbook-experiment/json/json_creator.py --to pyodide-worker --out html/pyodide --index --requirements pandas markdown tabulate
       - uses: peaceiris/actions-gh-pages@v3
         with:
