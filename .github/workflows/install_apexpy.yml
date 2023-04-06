@@ -36,11 +36,12 @@ jobs:
       if: runner.os == 'Windows'
       run: |
            choco install ninja mingw
+           choco install rtools --no-progress
+           echo "c:\rtools40\ucrt64\bin;" >> $env:GITHUB_PATH
 
     - name: Install apexpy (Windows)
       if: runner.os == 'Windows'
       run: |
-        python -m pip install meson-python
         python -m pip install git+https://github.com/aburrell/apexpy.git@rc_v2.0.1
 
     - name: Test apexpy
