@@ -35,6 +35,7 @@ jobs:
     - name: Setup gfortran (Windows)
       if: runner.os == 'Windows'
       run: |
+           choco install ninja mingw
            choco install rtools --no-progress
            echo "c:\rtools40\ucrt64\bin;" >> $env:GITHUB_PATH
 
