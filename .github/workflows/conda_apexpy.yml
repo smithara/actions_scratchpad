@@ -23,7 +23,7 @@ jobs:
         run: mamba info
       - name: Update environment
         shell: bash -el {0}
-        run: mamba install fortran-compiler numpy
+        run: mamba install fortran-compiler meson
       - name: Install apexpy
         shell: bash -el {0}
         run: pip install git+https://github.com/aburrell/apexpy.git@rc_v2.0.1
