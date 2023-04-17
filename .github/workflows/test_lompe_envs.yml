@@ -1,0 +1,37 @@
+name: Install lompe
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install-lompe-conda:
+    name: Using (${{ matrix.python-version }}, ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest"]
+        python-version: ["3.8"]
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          mamba-version: "*"
+          channels: conda-forge
+          python-version: ${{ matrix.python-version }}
+      - name: Clone repo
+        run: git clone https://github.com/smithara/lompe
+      - name: Install/update environment from file
+        run: mamba env update --file lompe/binder/environment.yml
+      - name: Mamba info & list
+        run: |
+          mamba info
+          mamba list
+      - name: Install lompe
+        run: |
+          git submodule update --init
+          pip install -e .[extras]
+      - name: Test lompe
+        run: python -c "import lompe"
