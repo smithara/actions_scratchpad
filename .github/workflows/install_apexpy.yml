@@ -42,7 +42,7 @@ jobs:
     - name: Install apexpy (Windows)
       if: runner.os == 'Windows'
       run: |
-        python -m pip install git+https://github.com/aburrell/apexpy.git@rc_v2.0.1
+        python -m pip install git+https://github.com/aburrell/apexpy.git
 
     - name: Test apexpy
       run: python -c "import apexpy"
