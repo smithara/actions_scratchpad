@@ -19,4 +19,6 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - name: Install netcdf
-      run: python -m pip install tables
+      run: |
+        python -m pip install h5py
+        python -m pip install tables
