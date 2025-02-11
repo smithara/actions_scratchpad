@@ -22,7 +22,7 @@ jobs:
       if: runner.os == 'Windows'
       run: |
         echo "C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw64\bin" >> $GITHUB_PATH
-        python -m pip install git+https://github.com/aburrell/apexpy.git@v2.0.1
+        python -m pip install git+https://github.com/aburrell/apexpy.git@v2.1.0
 
     - name: Test apexpy
       run: python -c "import apexpy"
