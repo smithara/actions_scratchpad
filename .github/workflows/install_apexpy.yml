@@ -33,6 +33,8 @@ jobs:
     
     - name: Run apexpy tests
       run: |
-        git clone https://github.com/aburrell/apexpy.git@v2.1.0
+        git clone https://github.com/aburrell/apexpy.git
+        git -C apexpy fetch --all --tags
+        git -C apexpy checkout tags/v2.1.0 -b version-2.1.0
         python -m pip install pytest
         pytest apexpy/
